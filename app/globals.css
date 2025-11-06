@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+}
+
+.glass-surface {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-3xl;
+}
+
+.button-gradient {
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 font-semibold transition-all;
+}
+
+.button-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button-gradient:hover::before {
+  opacity: 1;
+}
